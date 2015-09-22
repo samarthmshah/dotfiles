@@ -73,7 +73,6 @@ alias pumpitup="osascript -e 'set volume 7'"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias bp="atom /Users/samarthshah/.bash_profile"
 alias auto="cd /Users/samarthshah/Study/Autodidacticism/"
-alias gg="git log --oneline --abbrev-commit --all --graph --decorate --color --abbrev-commit"
 
 echo "Entering the CIA mainframe..."
 # echo "Go on. CODE like a pro."

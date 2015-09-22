@@ -54,7 +54,7 @@
 	g = grep -p
 	#############
 	l = log --oneline
-	lg = log --oneline --graph --decorate
+	gg = log --oneline --graph --decorate --abbrev-commit --all --color 
 	#############
 	ls = ls-files
 	lsf = "!git ls-files | grep -i"
