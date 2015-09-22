@@ -34,12 +34,12 @@ source $BASH_IT/bash_it.sh
 ## My version of bash.profile starts here.
 # ======= Setting PATH for Python 2.7 =======
 # The orginal version is saved in .bash_profile.pysave
-PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.7/bin"
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
-# ======= Setting PATH for Python 3.4 =======
+# ======= Setting PATH for Python 3.5 =======
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
 # ======= Setting Java home =======
@@ -55,7 +55,7 @@ export PATH
 alias ..="cd .."  # papa
 alias ...="cd ../.."  # dada
 alias dt="cd ~/Desktop"
-alias week='date +%V'  # week number
+alias week="date +%V"  # week number
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
 # Recursively delete `.DS_Store` files
@@ -83,6 +83,10 @@ echo "bp auto capi sapi gg mcd numfiles ll alarm makedocs"
 #Portmanteu for mkdir and go to that folder.
 mcd(){
 	mkdir -p "$1" && cd "$1";
+}
+
+a(){
+	atom "$1"
 }
 
 #Number of files in the current directory
