@@ -4,7 +4,7 @@
 olddir=$HOME/old.dotfiles
 files="bash_profile gitconfig"  # list of files/folders to symlink in homedir
 
-echo "Creating $olddir for backup of any existing dotfiles in ~"
+echo "Creating $olddir for backup of any existing dotfiles in ~ ..."
 rm -rf $olddir
 mkdir -p $olddir
 echo "... done"

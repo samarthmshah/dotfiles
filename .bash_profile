@@ -7,31 +7,10 @@ export BASH_IT="$HOME/.bash_it"
 # location /.bash_it/themes/
 export BASH_IT_THEME='zork'
 
-# Your place for hosting Git repos. I use this for private repos.
-export GIT_HOSTING='git@git.domain.com'
-
-# Don't check mail when opening terminal.
-unset MAILCHECK
-
-# Change this to your console based IRC client of choice.
-export IRC_CLIENT='irssi'
-
-# Set this to the command you use for todo.txt-cli
-export TODO="t"
-
-# Set this to false to turn off version control status checking within the prompt for all themes
-export SCM_CHECK=true
-
-# Set vcprompt executable path for scm advance info in prompt (demula theme)
-# https://github.com/xvzf/vcprompt
-#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
-
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-
 #########################################################################################
-## My version of bash.profile starts here.
 # ======= Setting PATH for Python 2.7 =======
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
@@ -71,12 +50,14 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias bp="atom /Users/samarthshah/.bash_profile"
-alias auto="cd /Users/samarthshah/Study/Autodidacticism/"
+alias bp="atom $HOME/dotfiles/.bash_profile"
+alias auto="cd $HOME/Study/Autodidacticism/"
+alias web="cd $HOME/Study/Autodidacticism/samarth.xyz"
+alias enter="ssh -p 2222 samarthmshah@108.167.189.59"
 
 echo "Entering the CIA mainframe..."
-# echo "Go on. CODE like a pro."
-echo "bp auto capi sapi gg mcd numfiles ll alarm makedocs"
+
+echo "bp bashed auto capi sapi gg mcd numfiles ll alarm makedocs"
 
 # ======= Functions =======
 #Portmanteu for mkdir and go to that folder.
@@ -93,7 +74,6 @@ numfiles(){
 	echo $(ls -1 | wc -l);
 }
 
-#ls -al
 ll(){
 	ls -alFG;
 }
@@ -103,19 +83,32 @@ alarm(){
 	cd ~/Study/Autodidacticism/Python\ Practice/alarm/ && python my_alarm.py
 }
 
+# run python server
+function server() {
+  local port="${1:-8000}"
+  python -m SimpleHTTPServer "$port"
+}
+
+# change ~/.bash_profile on changing ~/dotfiles/.bash_profile
+bashed(){
+	cd  $HOME/dotfiles
+  source ./install.sh
+	reload
+}
+
 # Work stuff
 capi(){
-	cd /Users/samarthshah/Work/dsp-advertiser-client-api
-	source /Users/samarthshah/Work/cvenv/bin/activate
+	cd $HOME/Work/dsp-advertiser-client-api
+	source $HOME/Work/cvenv/bin/activate
 }
 
 sapi(){
-	cd /Users/samarthshah/Work/dsp-advertiser-api
-	source /Users/samarthshah/Work/svenv/bin/activate
+	cd $HOME/Work/dsp-advertiser-api
+	source $HOME/Work/svenv/bin/activate
 }
 
 makedocs(){
-	cd /Users/samarthshah/Work/dsp-advertiser-client-api/docs/;
+	cd $HOME/Work/dsp-advertiser-client-api/docs/;
 	make clean && make html
 	open build/html/index.html
 }
