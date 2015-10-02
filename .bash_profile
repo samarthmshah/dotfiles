@@ -52,8 +52,8 @@ alias pumpitup="osascript -e 'set volume 7'"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias bp="atom $HOME/dotfiles/.bash_profile"
 alias auto="cd $HOME/Study/Autodidacticism/"
-alias web="cd $HOME/Study/Autodidacticism/samarth.xyz"
-alias enter="ssh -p 2222 samarthmshah@108.167.189.59"
+alias enter="ssh -p 2222 samarthmshah@samarth.xyz"
+alias web="cd $HOME/Study/Autodidacticism/portfolio-template && atom ."
 
 echo "Entering the CIA mainframe..."
 
@@ -61,25 +61,25 @@ echo "bp bashed auto capi sapi gg mcd numfiles ll alarm makedocs"
 
 # ======= Functions =======
 #Portmanteu for mkdir and go to that folder.
-mcd(){
+function mcd(){
 	mkdir -p "$1" && cd "$1";
 }
 
-a(){
+function a(){
 	atom "$1"
 }
 
 #Number of files in the current directory
-numfiles(){
+function numfiles(){
 	echo $(ls -1 | wc -l);
 }
 
-ll(){
+function ll(){
 	ls -alFG;
 }
 
 #alarm
-alarm(){
+function alarm(){
 	cd ~/Study/Autodidacticism/Python\ Practice/alarm/ && python my_alarm.py
 }
 
@@ -90,25 +90,25 @@ function server() {
 }
 
 # change ~/.bash_profile on changing ~/dotfiles/.bash_profile
-bashed(){
+function bashed(){
 	cd  $HOME/dotfiles
   source ./install.sh
 	reload
 }
 
 # Work stuff
-capi(){
+function capi(){
 	cd $HOME/Work/dsp-advertiser-client-api
 	source $HOME/Work/cvenv/bin/activate
 }
 
-sapi(){
+function sapi(){
 	cd $HOME/Work/dsp-advertiser-api
 	source $HOME/Work/svenv/bin/activate
 }
 
-makedocs(){
-	cd $HOME/Work/dsp-advertiser-client-api/docs/;
+function makedocs(){
+	cd $HOME/Work/dsp-advertiser-client-api/docs/
 	make clean && make html
 	open build/html/index.html
 }
