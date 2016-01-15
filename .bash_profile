@@ -57,11 +57,11 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias bp="atom $HOME/dotfiles/.bash_profile";
 alias auto="cd $HOME/Study/Autodidacticism/";
 alias enter="ssh -p 2222 samarthmshah@samarth.xyz";
-alias web="cd $HOME/Study/Autodidacticism/portfolio-template && atom .";
+alias portfolio="cd $HOME/Study/Autodidacticism/portfolio-template && atom .";
 
 echo "Entering the CIA mainframe...";
 
-echo "bp bashed auto capi sapi gg mcd numfiles ll alarm makedocs";
+#echo "bp bashed auto capi sapi gg mcd numfiles ll alarm makedocs";
 
 # ======= Functions =======
 #Portmanteu for mkdir and go to that folder.
@@ -95,7 +95,7 @@ function server() {
 
 # change ~/.bash_profile on changing ~/dotfiles/.bash_profile
 function bashed(){
-	cd  $HOME/dotfiles;
+	cd $HOME/dotfiles;
 	source ./install.sh;
 	reload;
 }
