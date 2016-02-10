@@ -38,7 +38,6 @@ export PATH="$HOME/.node/bin:$PATH"
 # export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
 
 # for using Github notifications for BitBar. Access limited only to read-notifications.
-export GITHUB_TOKEN='97a935c45204346e95783cbd68f2539e4da7ee22'
 
 # ======= Aliases =======
 alias ..="cd ..";  # papa
