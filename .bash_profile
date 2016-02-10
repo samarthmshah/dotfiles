@@ -31,16 +31,31 @@ export M2_HOME;
 PATH=$PATH:$M2_HOME/bin;
 export PATH;
 
+# ======= Setting PATH for NodeJS. =======
+export PATH="$HOME/.node/bin:$PATH"
+
 # ==== After the El Capitan fuck up of rootlessness, chanege the path for latex ====
 # export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
+
+# for using Github notifications for BitBar. Access limited only to read-notifications.
+export GITHUB_TOKEN='97a935c45204346e95783cbd68f2539e4da7ee22'
 
 # ======= Aliases =======
 alias ..="cd ..";  # papa
 alias ...="cd ../..";  # dada
-alias dt="cd ~/Desktop";
+alias desk="cd $HOME/Desktop";
+alias down="cd $HOME/Downloads";
+alias sand="cd $HOME/Study/Sandbox/";
 alias week="date +%V";  # week number
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update';
+alias update='sudo softwareupdate -i -a;
+							brew update; brew upgrade;
+							brew cleanup;
+							brew upgrade node;
+							npm update npm -g;
+							npm update -g;
+							sudo gem update --system;
+							sudo gem update';
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete";
 # Empty the Trash on all mounted volumes and the main HDD
@@ -55,9 +70,8 @@ alias pumpitup="osascript -e 'set volume 7'";
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend";
 alias bp="atom $HOME/dotfiles/.bash_profile";
-alias auto="cd $HOME/Study/Autodidacticism/";
 alias enter="ssh -p 2222 samarthmshah@samarth.xyz";
-alias portfolio="cd $HOME/Study/Autodidacticism/portfolio-template && atom .";
+alias portfolio="cd $HOME/Study/Sandbox/portfolio-template && atom .";
 
 echo "Entering the CIA mainframe...";
 
@@ -84,7 +98,7 @@ function ll(){
 
 #alarm
 function alarm(){
-	cd ~/Study/Autodidacticism/Python\ Practice/alarm/ && python my_alarm.py;
+	cd ~/Study/Sandbox/Python\ Practice/alarm/ && python my_alarm.py;
 }
 
 # run python server
@@ -98,4 +112,5 @@ function bashed(){
 	cd $HOME/dotfiles;
 	source ./install.sh;
 	reload;
+	cd $HOME;
 }
