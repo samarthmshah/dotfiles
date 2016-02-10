@@ -11,12 +11,15 @@
 
 import json
 import urllib2
-import os
+from os.path import (join, dirname, abspath)
 import re
 
+print 'GH'
 # GitHub.com
-github_api_key = None
-with open('github_token', 'r') as f:
+github_api_key = str()
+path_to_token = join(dirname(dirname( abspath(__file__))), 'github_token.txt')
+
+with open(path_to_token, 'r') as f:
     github_api_key = f.read().strip()
 
 active = '#4078C0'
@@ -45,7 +48,6 @@ def plural( word, n ):
     return str(n) + ' ' + (word + 's' if n > 1 else word)
 
 is_github_defined = len( github_api_key ) == 40
-print is_github_defined
 
 github_notifications = get_notifications( github_api_key ) if is_github_defined else []
 has_notifications = len( github_notifications )
