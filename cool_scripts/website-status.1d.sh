@@ -6,7 +6,7 @@
 #
 # Gets the status of your website
 
-
+: '
 url='http://www.samarth.xyz'
 
 code=$(curl -o /dev/null --silent --head --write-out '%{http_code}\n' $url)
@@ -26,3 +26,4 @@ esac
 echo "---"
 echo $url
 echo "http code $code"
+'

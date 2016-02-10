@@ -71,6 +71,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias bp="atom $HOME/dotfiles/.bash_profile";
 alias enter="ssh -p 2222 samarthmshah@samarth.xyz";
 alias portfolio="cd $HOME/Study/Sandbox/portfolio-template && atom .";
+alias bitbar="kill $(ps -ax | grep BitBar | awk 'NR==1 {print $1;}') && open /Applications/BitBar.app/"
 
 echo "Entering the CIA mainframe...";
 

@@ -33,7 +33,7 @@ def output(story)
   puts "---"
 end
 
-puts "HackerNews"
+puts "HN"
 puts "---"
 begin
   get_top_stories.map { |id| get_story_for_id(id) }.each { |story| output(story) }
