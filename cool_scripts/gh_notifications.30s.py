@@ -15,7 +15,9 @@ import os
 import re
 
 # GitHub.com
-github_api_key = os.getenv( 'GITHUB_TOKEN', 'Enter your GitHub.com Personal Access Token here...' )
+github_api_key = None
+with open('github_token', 'r') as f:
+    github_api_key = f.read().strip()
 
 active = '#4078C0'
 inactive = '#7d7d7d'
@@ -43,6 +45,7 @@ def plural( word, n ):
     return str(n) + ' ' + (word + 's' if n > 1 else word)
 
 is_github_defined = len( github_api_key ) == 40
+print is_github_defined
 
 github_notifications = get_notifications( github_api_key ) if is_github_defined else []
 has_notifications = len( github_notifications )
