@@ -14,7 +14,7 @@ import urllib2
 from random import randint
 
 api_key = '4ef757957aba9db9a976c9b328256a7a'
-units = ''
+units = 'si'
 
 def auto_loc_lookup():
   try:
