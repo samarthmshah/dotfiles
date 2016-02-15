@@ -1,0 +1,42 @@
+# Path to the bash it configuration
+export BASH_IT="$HOME/.bash_it";
+
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='zork';
+
+# Load Bash It
+source $BASH_IT/bash_it.sh;
+
+
+########################################################################################
+# ======= Setting PATH for Python 2.7 =======
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}";
+export PATH;
+
+# ======= Setting PATH for Python 3.5 =======
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}";
+export PATH;
+
+# ======= Setting Java home =======
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home;
+
+# ======= Setting PATH for Maven. =======
+M2_HOME="/usr/local/apache-maven/apache-maven-3.3.3";
+export M2_HOME;
+PATH=$PATH:$M2_HOME/bin;
+export PATH;
+
+# ======= Setting PATH for NodeJS. =======
+export PATH="$HOME/.node/bin:$PATH"
+
+# ==== After the El Capitan fuck up of rootlessness, chanege the path for latex ====
+# export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+
+# Highlight matches for GREP
+export GREP_OPTIONS='--color=auto'

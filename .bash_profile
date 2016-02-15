@@ -1,81 +1,11 @@
 #!/usr/bin/env bash
-#
-# Path to the bash it configuration
-export BASH_IT="$HOME/.bash_it";
 
-# Lock and Load a custom theme file
-# location /.bash_it/themes/
-export BASH_IT_THEME='zork';
-
-# Load Bash It
-source $BASH_IT/bash_it.sh;
-
-
-########################################################################################
-# ======= Setting PATH for Python 2.7 =======
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}";
-export PATH;
-
-# ======= Setting PATH for Python 3.5 =======
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}";
-export PATH;
-
-# ======= Setting Java home =======
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home;
-
-# ======= Setting PATH for Maven. =======
-M2_HOME="/usr/local/apache-maven/apache-maven-3.3.3";
-export M2_HOME;
-PATH=$PATH:$M2_HOME/bin;
-export PATH;
-
-# ======= Setting PATH for NodeJS. =======
-export PATH="$HOME/.node/bin:$PATH"
-
-# ==== After the El Capitan fuck up of rootlessness, chanege the path for latex ====
-# export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
-
-# for using Github notifications for BitBar. Access limited only to read-notifications.
-
-# ======= Aliases =======
-alias ..="cd ..";  # papa
-alias ...="cd ../..";  # dada
-alias desk="cd $HOME/Desktop";
-alias down="cd $HOME/Downloads";
-alias sand="cd $HOME/Study/Sandbox/";
-alias week="date +%V";  # week number
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a;
-							brew update; brew upgrade;
-							brew cleanup;
-							brew upgrade node;
-							npm update npm -g;
-							npm update -g;
-							sudo gem update --system;
-							sudo gem update';
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete";
-# Empty the Trash on all mounted volumes and the main HDD
-# Also, clear Apple’s System Logs to improve shell startup speed
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl";
-# Intuitive map function
-# For example, to list all directories that contain a certain file:
-# find . -name .gitattributes | map dirname
-alias map="xargs -n1";
-alias stfu="osascript -e 'set volume output muted true'";
-alias pumpitup="osascript -e 'set volume 7'";
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend";
-alias bp="atom $HOME/dotfiles/.bash_profile";
-alias enter="ssh -p 2222 samarthmshah@samarth.xyz";
-alias portfolio="cd $HOME/Study/Sandbox/portfolio-template && atom .";
-alias bitbar="kill $(ps -ax | grep BitBar | awk 'NR==1 {print $1;}') && open /Applications/BitBar.app/"
+# Load ~/.exports and ~/.aliases
+for file in $HOME/dotfiles/.{exports,aliases}; do
+	[ -r "$file" ] && source "$file"
+done
 
 echo "Entering the CIA mainframe...";
-
-#echo "bp bashed auto capi sapi gg mcd numfiles ll alarm makedocs";
 
 # ======= Functions =======
 #Portmanteu for mkdir and go to that folder.
@@ -98,7 +28,7 @@ function ll(){
 
 #alarm
 function alarm(){
-	cd ~/Study/Sandbox/Python\ Practice/alarm/ && python my_alarm.py;
+	cd $HOME/Study/Sandbox/Python\ Practice/alarm/ && python my_alarm.py;
 }
 
 # run python server
