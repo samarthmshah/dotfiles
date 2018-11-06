@@ -1,0 +1,116 @@
+ls
+dir
+ll
+d:
+cd rd
+cd CAB\EAPortal
+down
+cmderr
+ll
+ll
+cd d:
+d:
+cd rd
+cd CAB\
+cd EAPortalsr
+cd EAPortal
+cd EAPortal
+cd ..
+cd EAPortal
+cd ..
+groups-init
+fd es2015.promise
+rg -li es2015.promise
+rg -l es2015.promise
+rg 2015
+rg es2015
+rg es2015.promise
+..
+rg -il es2015.promise
+ cd src
+ll
+groups
+groups-init
+..
+cd AzureUX-ManagementGroups\
+dir
+start dirs.sln
+cd EAPortal
+cd ..
+cd EAPortal
+groups-init
+fd es2015.promise
+rg -li es2015.promise
+rg -l es2015.promise
+rg 2015
+rg es2015
+rg es2015.promise
+rg -il es2015.promise
+ cd src
+group
+grouops
+groups
+repo sync AD-CAB-BillingExt
+cdf
+bp
+cd CAB\
+cd AD\
+cd CAB
+cd ..
+ll
+cd CAB-BillingExt\
+git checkout dev
+.\init.
+.\init.cmd
+.\init.full.cmd
+clear
+choco enable source -n=chocolatey
+choco
+cd BillingExtension\
+dir
+start BillingExtension.sln
+build
+..
+.\init.cmd 
+cd BillingExtension\
+start BillingExtension.sln
+build
+.\init.cmd 
+groups
+..
+cd AD\
+cd CAB-BillingExt\
+dir
+.\init.cnd
+.\init.cmd
+clear
+choco enable source -n=chocolatey
+choco
+cd BillingExtension\
+dir
+start BillingExtension.sln
+build
+..
+.\init.cmd 
+.\init.cnd
+cd AD\
+cd CAB
+cd CAB-BillingExt\
+.\init.cmd
+dir
+cd BillingExtension\
+start BillingExtension.sln
+gs
+brf
+fbr
+cbr
+brc
+groups
+git checkout dev
+git pull
+buildreq
+cd GroupsRP
+start GroupsRP.sln
+build
+..
+.\init.cmd 

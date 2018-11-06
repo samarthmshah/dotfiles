@@ -1,0 +1,114 @@
+groups-init
+az --version
+task-init
+groups-init
+task-init
+az --version
+az dogfood login
+d:
+cd acr-build-helloworld-node\
+dir
+ACR_NAME=myfirstexample
+export ACR_NAME=myfirstexample
+%ACR_NAME=myfirstexample
+which az
+where az
+set ACR_NAME=myfirstexample
+echo $(ACR_NAME)
+set ACR_NAME
+get ACR_NAME
+echo ACR_NAME
+echo $ACR_NAME
+echo %ACR_NAME
+set RES_GROUP=$ACR_NAME
+set RES_GROUP=%ACR_NAME%
+az acr create --resource-group $RES_GROUP --name %ACR_NAME% --sku Standard --location eastus
+c .
+az acr build --registry %ACR_NAME% --image helloacrtasks:v1 .
+%ASR_NAME%
+echo %ASR_NAME%
+echo %ACR_NAME%
+set GIT_USER=shahzzzam
+set GIT_PAT=ce691f908b4d2b875686af621e014815d03d050a
+    --registry $ACR_NAME \
+    --name taskhelloworld \
+    --image helloworld:{{.Run.ID}} \
+    --context https://github.com/$GIT_USER/acr-build-helloworld-node.git \
+    --branch master \
+    --file Dockerfile \
+az acr task create \
+    --registry $ACR_NAME \
+    --name taskhelloworld \
+    --image helloworld:{{.Run.ID}} \
+    --context https://github.com/$GIT_USER/acr-build-helloworld-node.git \
+    --branch master \
+    --file Dockerfile \
+az acr task create \     --registry %ACR_NAME% \     --name taskhelloworld \     --image helloworld:{{.Run.ID}} \     --context https://github.com/$GIT_USER/acr-build-helloworld-node.git \     --branch master \     --file Dockerfile \     --git-access-token %GIT_PAT%
+az acr task create \     --registry %ACR_NAME%      --name taskhelloworld      --image helloworld:{{.Run.ID}}      --context https://github.com/$GIT_USER/acr-build-helloworld-node.git      --branch master     --file Dockerfile --git-access-token %GIT_PAT%
+az acr task create      --registry %ACR_NAME%      --name taskhelloworld      --image helloworld:{{.Run.ID}}      --context https://github.com/$GIT_USER/acr-build-helloworld-node.git      --branch master     --file Dockerfile --git-access-token %GIT_PAT%
+az acr task create      --registry %ACR_NAME%      --name taskhelloworld      --image helloworld:{{.Run.ID}}      --context https://github.com/%GIT_USER%/acr-build-helloworld-node.git      --branch master     --file Dockerfile --git-access-token %GIT_PAT%
+az acr task run --help
+az acr task --help
+az acr run --gelp
+az acr run --r=%ACR_NAME% --os=windows -f=https://github.com/iscai-msft/file_task_test.git
+az acr run -r=%ACR_NAME% --os=windows -f=https://github.com/iscai-msft/file_task_test.git
+az acr run -r=%ACR_NAME% --os=windows -f=https://github.com/iscai-msft/file_task_test.git#master:samples/java/task/acb.yaml https://github.com/iscai-msft/file_task_test.git
+az acr run --registry <acrName> -f build-push-hello-world.yaml https://github.com/Azure-Samples/acr-tasks.git
+az acr run --registry %ACR_NAME% -f build-push-hello-world.yaml https://github.com/Azure-Samples/acr-tasks.git
+az acr run --help
+az acr --help
+az acr run show
+az acr show
+az acr show --name %ACR_NAME%
+az acr run --registry %ACR_NAME% -f build-push-hello-world.yaml https://github.com/Azure-Samples/acr-tasks.git --debug
+ll
+c output.txt 
+az login dogfood
+az acr login
+echo $RES_GROUP
+az group create --resource-group $RES_GROUP --location eastus
+az group create --resource-group %RES_GROUP% --location eastus
+az acr create --resource-group %RES_GROUP% --name %ACR_NAME% --sku Standard --location eastus
+tasks
+task
+git status
+gs
+git stash
+brf
+az 
+az acr
+az acr -h
+az acr list
+echo %RES_GROUP%
+az cloud register -n dogfood --endpoint-active-directory https://login.windows-ppe.net --endpoint-active-directory-graph-resource-id https://graph.ppe.windows.net/ --endpoint-active-directory-resource-id https://management.core.windows.net/ --endpoint-gallery https://current.gallery.azure-test.net/ --endpoint-management https://management.core.windows.net/ --endpoint-resource-manager https://api-dogfood.resources.windows-int.net/ --suffix-storage-endpoint core.test-cint.azure-test.net --suffix-acr-login-server .azurecr-test.io
+az cloud set -n dogfood 
+az login
+az account list
+az account set --subscription "KraterPartySubscription"
+cler
+az acr run --registry %ACR_NAME% -f build-push-hello-world.yaml https://github.com/Azure-Samples/acr-tasks.git --debug > output.txt
+clear
+az cloud set -h
+az cloud reset
+az cloud -o
+az acr run --registry %ACR_NAME% -f build-push-hello-world.yaml https://github.com/Azure-Samples/acr-tasks.git --debug > output.txt
+az cloud set -h
+az cloud reset
+az cloud -o
+task
+az cloud
+az login list
+az cloud lisy
+az cloud list
+az cloud list | grep name
+azure cloud set --name AzureCloud 
+a cloud set --name AzureCloud 
+az cloud set --name AzureCloud 
+az login
+set ACR_NAME=myfirstexample
+az cloud --subscription ACR - Build - Dogfood
+az cloud -h
+az account set --subscription "ACR - Build - Dogfood"
+az acr run --registry %ACR_NAME% -f build-push-hello-world.yaml https://github.com/Azure-Samples/acr-tasks.git --debug 
+clear
+ssh
