@@ -60,6 +60,7 @@ alias ll='ls -alG'
 alias tele='cd ~/vso/src/teleport-benchmarks'
 alias pjson='python -m json.tool'
 alias bashed='source ~/.bash_profile'
+alias clip='xclip -sel clip'
 
 cdf() {
   local dir
