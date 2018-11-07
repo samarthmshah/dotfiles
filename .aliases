@@ -38,12 +38,52 @@ alias pumpitup="osascript -e 'set volume 7'";
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend";
 
-alias bp="atom $HOME/dotfiles/.bash_profile";
-alias enter="ssh -p 2222 samarthmshah@samarth.xyz";
-alias portfolio="cd $HOME/Study/Sandbox/portfolio-template && atom .";
+alias bp="code $HOME/dotfiles/.bash_profile";
+alias enter="ssh samashah@40.85.148.138";
+alias portfolio="cd $HOME/Study/Sandbox/portfolio-template && code .";
 alias bitbar="kill $(ps -ax | grep BitBar | awk 'NR==1 {print $1;}') && open /Applications/BitBar.app/"
 alias fuck='sudo $(history -p \!\!)'
 alias hgrep="history | grep "
 alias myip="ipconfig getifaddr en0"
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
+# To add a new vendor to the path, do something like:
+# export PATH=${CMDER_ROOT}/vendor/whatever:${PATH}
+alias gs='git status'
+alias e='explorer .'
+alias gl='git log --oneline --all --graph --decorate  $1'
+alias glme='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --author="Samarth Shah" $1'
+alias c='code -g -r $1'
+alias tasks='cd /d/rd/Build/src'
+alias tasks-init='cd /d/rd/Build/src && start ACR.Build.Linux.sln'
+alias ll='ls -alG'
+alias tele='cd ~/vso/src/teleport-benchmarks'
+alias pjson='python -m json.tool'
+alias bashed='source ~/.bash_profile'
+
+cdf() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+# brf - checkout git branch
+brf() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+# fuzzy grep open via ag
+vg() {
+  local file
+
+  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
+
+  if [[ -n $file ]]
+  then
+     code $file
+  fi
+}

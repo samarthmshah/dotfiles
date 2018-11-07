@@ -5,16 +5,10 @@ for file in $HOME/dotfiles/.{exports,aliases}; do
 	[ -r "$file" ] && source "$file"
 done
 
-echo "Entering the CIA mainframe...";
-
 # ======= Functions =======
 #Portmanteu for mkdir and go to that folder.
 function mcd(){
 	mkdir -p "$1" && cd "$1";
-}
-
-function a(){
-	atom "$1";
 }
 
 #Number of files in the current directory
