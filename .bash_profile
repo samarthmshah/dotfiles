@@ -38,3 +38,16 @@ function bashed(){
 	reload;
 	cd $HOME;
 }
+
+function re_install_docker() {
+	sudo service docker stop && 
+	sudo apt-get purge -y docker-ce && 
+	sudo apt-get autoremove --purge -y docker-ce && 
+	sudo rm -rf /var/lib/docker && 
+	sudo apt-get update && 
+  	sudo apt-get install -y docker-ce &&
+   	sudo service docker start && 
+	sudo docker run hello-world &&
+	sudo usermod -aG docker $USER
+}
+
