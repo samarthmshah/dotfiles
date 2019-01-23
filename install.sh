@@ -14,3 +14,7 @@ for file in $files; do
     cp -r $HOME/.$file $olddir
     cp -r .$file $HOME/
 done
+
+# install bash_it
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+echo "y" | . ~/.bash_it/install.sh

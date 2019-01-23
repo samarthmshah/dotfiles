@@ -66,3 +66,8 @@ function install_docker() {
 	sudo usermod -aG docker $USER &&
 	docker run hello-world
 }
+
+# Usage: get_up dev
+function get_up() {
+	git fetch upstream && git merge upstream/$1
+}

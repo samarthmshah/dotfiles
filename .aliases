@@ -37,7 +37,7 @@ alias pumpitup="osascript -e 'set volume 7'";
 
 # Lock the screen (when going AFK)
 alias afk=" systemctl suspend -i";
-alias bp="code $HOME/dotfiles/.bash_profile";
+alias bp="code $HOME/dotfiles";
 alias enter="ssh samashah@40.85.148.138";
 alias portfolio="cd $HOME/Study/Sandbox/portfolio-template && code .";
 alias bitbar="kill $(ps -ax | grep BitBar | awk 'NR==1 {print $1;}') && open /Applications/BitBar.app/"
@@ -61,6 +61,7 @@ alias pjson='python -m json.tool'
 alias bashed='source ~/.bash_profile'
 alias clip='xclip -sel clip'
 alias openfs='xdg-open .'
+alias cli='cd ~/code/azure-cli && . ./azure-cli/env/bin/activate'
 
 cdf() {
   local dir

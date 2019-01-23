@@ -38,5 +38,3 @@ export PATH="$HOME/.node/bin:$PATH"
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
 
-# Highlight matches for GREP
-export GREP_OPTIONS='--color=auto'
